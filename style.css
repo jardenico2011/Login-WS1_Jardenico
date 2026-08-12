@@ -3,201 +3,79 @@
 }
 
 body {
+    margin: 0;
     min-height: 100vh;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 24px;
-    background: linear-gradient(135deg, #2563eb, #1e40af);
-    color: #1f2937;
-    font-family: Arial, Helvetica, sans-serif;
+    display: grid;
+    place-items: center;
+    padding: 20px;
+    background: #99e4dd;
+    font-family: Arial, sans-serif;
+    color: #222;
 }
 
-.login-card {
-    width: min(100%, 400px);
-    padding: 36px;
-    background: #ffffff;
-    border-radius: 16px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+.login-card,
+.welcome-card {
+    width: 100%;
+    max-width: 400px;
+    padding: 30px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
 }
 
-.login-card h1 {
+h1 {
     margin: 0;
     text-align: center;
-    font-size: 30px;
-    color: #111827;
 }
 
-.subtitle {
-    margin: 10px 0 28px;
+.subtitle,
+.register-link,
+.welcome-card p {
     text-align: center;
-    color: #6b7280;
-    font-size: 15px;
-}
-
-.form-group {
-    margin-bottom: 18px;
+    color: #666;
 }
 
 label {
     display: block;
-    margin-bottom: 8px;
-    color: #374151;
-    font-size: 14px;
-    font-weight: 600;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+input,
+button {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    font: inherit;
 }
 
 input {
-    width: 100%;
-    padding: 13px 14px;
-    border: 1px solid #d1d5db;
-    border-radius: 8px;
-    background: #f9fafb;
-    color: #111827;
-    font-size: 15px;
-    transition: 0.3s ease;
+    border: 1px solid #bbb;
 }
 
-input:focus {
-    outline: none;
-    border-color: #2563eb;
-    background: #ffffff;
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
-}
-
-button {
-    width: 100%;
-    margin-top: 12px;
-    padding: 13px;
-    border: none;
-    border-radius: 8px;
-    background: #2563eb;
-    color: #ffffff;
-    font-size: 16px;
-    font-weight: 700;
+button,
+.logout {
+    display: inline-block;
+    margin-top: 20px;
+    border: 0;
+    background: #7b92c6;
+    color: rgb(243, 219, 219);
     cursor: pointer;
-    transition: 0.3s ease;
+    text-align: center;
+    text-decoration: none;
 }
 
-button:hover {
+button:hover,
+.logout:hover {
     background: #1d4ed8;
-    transform: translateY(-1px);
 }
 
-button:active {
-    transform: translateY(0);
-}
-
-.register-link {
-    margin-top: 22px;
+.welcome-card {
     text-align: center;
-    font-size: 14px;
-    color: #6b7280;
 }
 
-.register-link a {
-    color: #2563eb;
-    font-weight: 700;
-    text-decoration: none;
+.logout {
+    padding: 10px 20px;
+    border-radius: 4px;
 }
 
-.register-link a:hover {
-    text-decoration: underline;
-}
-
-.password-wrapper {
-    position: relative;
-}
-
-.password-wrapper input {
-    padding-right: 45px;
-}
-
-.password-toggle {
-    position: absolute;
-    right: 12px;
-    top: 50%;
-    transform: translateY(-50%);
-    border: none;
-    background: transparent;
-    color: #6b7280;
-    width: auto;
-    padding: 0;
-    margin: 0;
-    font-size: 14px;
-}
-
-.password-toggle:hover {
-    background: transparent;
-    color: #2563eb;
-}
-
-.remember-forgot {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 16px 0;
-    font-size: 14px;
-}
-
-.remember {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    color: #6b7280;
-}
-
-.remember input {
-    width: auto;
-}
-
-.forgot-password {
-    color: #2563eb;
-    text-decoration: none;
-    font-weight: 600;
-}
-
-.forgot-password:hover {
-    text-decoration: underline;
-}
-
-.error-message {
-    margin-top: 12px;
-    padding: 10px;
-    border-radius: 8px;
-    background: #fee2e2;
-    color: #b91c1c;
-    text-align: center;
-    font-size: 14px;
-}
-
-.success-message {
-    margin-top: 12px;
-    padding: 10px;
-    border-radius: 8px;
-    background: #dcfce7;
-    color: #15803d;
-    text-align: center;
-    font-size: 14px;
-}
-
-@media (max-width: 480px) {
-    body {
-        padding: 16px;
-    }
-
-    .login-card {
-        padding: 28px 22px;
-    }
-
-    .login-card h1 {
-        font-size: 26px;
-    }
-
-    .remember-forgot {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 12px;
-    }
-}
