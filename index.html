@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <main class="login-card">
+        <h1>Create account</h1>
+        <p class="subtitle">Fill in your details to get started</p>
+
+        <form id="register-form" action="../User dashboard.html">
+            <label for="first-name">First name</label>
+            <input id="first-name" name="firstName" type="text" required>
+
+            <label for="last-name">Last name</label>
+            <input id="last-name" name="lastName" type="text" required>
+
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required>
+
+            <label for="register-password">Password</label>
+            <input id="register-password" name="password" type="password" minlength="4" required>
+
+            <label for="phone">Phone number</label>
+            <input id="phone" name="phone" type="tel" required>
+
+            <div class="button-container">
+                <button type="button" onclick="window.location.href='../LoginForm.html'">Back to Login</button>
+            </div>
+            <button type="submit">Create Account</button>
+        </form>
+    </main>
+</body>
+</html>
