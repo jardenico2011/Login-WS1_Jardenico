@@ -1,16 +1,57 @@
 <!DOCTYPE html>
-<htmlang="en">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Dashboard</title>
+    <title>Announcements | Peace Freedom</title>
 </head>
 <body class="dashboard-page">
-    <main class="welcome-card">
-        <h1>Welcome to My Dashboard</h1>
-        <p>You have successfully logged in.</p>
-        <a href="LoginForm.html" class="logout">Logout</a>
+    <main class="board-shell">
+        <header class="board-header">
+            <div>
+                <p class="eyebrow">Peace Freedom International Collective</p>
+                <h1>Announcement Board</h1>
+                <p class="header-copy">Latest updates and notices.</p>
+            </div>
+            <nav class="board-actions" aria-label="Dashboard actions">
+                <a class="admin-link" href="DASHBOARD/Admin dashboard.html">Admin view</a>
+                <a class="logout" href="LoginForm.html">Logout</a>
+            </nav>
+        </header>
+
+        <section class="announcement-toolbar" aria-label="Announcement filters">
+            <p id="announcement-count" class="announcement-count"></p>
+            <label class="filter-label" for="category-filter">Show
+                <select id="category-filter">
+                    <option value="all">All announcements</option>
+                    <option value="General">General</option>
+                    <option value="Event">Events</option>
+                    <option value="Important">Important</option>
+                </select>
+            </label>
+        </section>
+
+        <section id="announcement-list" class="announcement-list" aria-live="polite"></section>
     </main>
+
+    <script>
+        const storageKey = 'peaceFreedomAnnouncements';
+        const defaultAnnouncements = [
+            { title: 'Welcome', category: 'General', date: 'August 19, 2026', message: 'Announcements and notices will be posted on this page.' },
+            { title: 'Community Meeting', category: 'Event', date: 'August 23, 2026', message: 'Everyone is invited to join the monthly community meeting at 2:00 PM.' },
+            { title: 'Update your profile', category: 'Important', date: 'August 18, 2026', message: 'Please make sure that your contact information is complete and up to date.' }
+        ];
+        function getAnnouncements() { try { const saved = JSON.parse(localStorage.getItem(storageKey)); return Array.isArray(saved) ? saved : defaultAnnouncements; } catch { return defaultAnnouncements; } }
+        const escapeHtml = value => value.replace(/[&<>'"]/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' })[char]);
+        function renderAnnouncements() {
+            const selectedCategory = document.getElementById('category-filter').value;
+            const announcements = getAnnouncements().filter(item => selectedCategory === 'all' || item.category === selectedCategory);
+            document.getElementById('announcement-count').textContent = `${announcements.length} announcement${announcements.length === 1 ? '' : 's'}`;
+            document.getElementById('announcement-list').innerHTML = announcements.length ? announcements.map(item => `<article class="announcement-card"><div class="announcement-meta"><span class="badge ${item.category.toLowerCase()}">${item.category}</span><time>${item.date}</time></div><h2>${escapeHtml(item.title)}</h2><p>${escapeHtml(item.message)}</p></article>`).join('') : '<p class="empty-state">No announcements in this category yet.</p>';
+        }
+        document.getElementById('category-filter').addEventListener('change', renderAnnouncements);
+        renderAnnouncements();
+    </script>
 </body>
 </html>
