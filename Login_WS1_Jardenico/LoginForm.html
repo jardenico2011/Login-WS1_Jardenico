@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Login | Peace Freedom</title>
+</head>
+<body>
+    <main class="login-card">
+        <p class="brand-name">Peace Freedom International Collective</p>
+        <h1>Welcome back</h1>
+        <p class="subtitle">Sign in to your account</p>
+
+        <form class="login-form" action="login.php" method="post" autocomplete="new-password">
+            <label for="username">Email</label>
+            <input id="username" name="email" type="text" value=""
+                placeholder="Enter your email" autocomplete="new-password" required>
+
+            <label for="password">Password</label>
+            <input id="password" name="password" type="password" value=""
+                placeholder="Enter your password" autocomplete="new-password" required>
+
+            <div class="button-container">
+                <button type="submit">Login</button>
+            </div>
+        </form>
+
+        <p class="register-link">
+            Don't have an account? <a href="register.php">Register</a>
+        </p>
+    </main>
+</body>
+</html>

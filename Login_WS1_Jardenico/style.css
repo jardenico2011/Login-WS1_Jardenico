@@ -1,0 +1,179 @@
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #dff3f1;
+}
+
+.login-card,
+.board-shell {
+    width: 80%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #cccccc;
+}
+
+.login-card {
+    width: 350px;
+    padding: 25px;
+    border-radius: 5px;
+}
+
+h1 {
+    margin-bottom: 5px;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+.subtitle,
+.header-copy,
+.eyebrow {
+    color: #555555;
+}
+
+.error-message {
+    padding: 8px;
+    color: #9b2525;
+    background-color: #f8dddd;
+}
+
+.login-card h1,
+.login-card .subtitle {
+    text-align: center;
+}
+
+.login-card .brand-name {
+    margin-top: 0;
+    color: #278796;
+    font-size: 14px;
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #999999;
+    border-radius: 3px;
+}
+
+input:focus {
+    outline: none;
+    border-color: #278796;
+}
+
+textarea {
+    height: 120px;
+}
+
+button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    border: none;
+    color: white;
+    background-color: #278796;
+    border-radius: 3px;
+}
+
+button:hover {
+    background-color: #1f7180;
+}
+
+a {
+    color: #176b77;
+}
+
+.register-link {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.secondary-button {
+    display: block;
+    margin-top: 12px;
+    text-align: center;
+}
+
+.board-header {
+    padding-bottom: 15px;
+    border-bottom: 1px solid #cccccc;
+}
+
+.board-actions {
+    margin-top: 15px;
+}
+
+.logout,
+.admin-link {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 8px 12px;
+    color: white;
+    background-color: #278796;
+    text-decoration: none;
+}
+
+.announcement-list {
+    margin-top: 20px;
+}
+
+.announcement-card {
+    margin-bottom: 12px;
+    padding: 15px;
+    border: 1px solid #cccccc;
+}
+
+.announcement-card h2 {
+    margin: 10px 0;
+}
+
+.announcement-meta {
+    color: #666666;
+    font-size: 14px;
+}
+
+.badge {
+    margin-right: 10px;
+    padding: 3px 6px;
+    color: #176b77;
+    background-color: #dff3f1;
+}
+
+.badge.event {
+    background-color: #fff3c4;
+}
+
+.badge.important {
+    background-color: #f8dddd;
+}
+
+.admin-layout {
+    margin-top: 20px;
+}
+
+.post-form,
+.admin-announcements {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #cccccc;
+}
+
+@media (max-width: 600px) {
+    .login-card,
+    .board-shell {
+        width: 100%;
+    }
+}

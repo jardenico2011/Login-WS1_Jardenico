@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Admin Dashboard | Peace Freedom</title>
+</head>
+<body class="dashboard-page">
+    <main class="board-shell">
+        <header class="board-header">
+            <div>
+                <p class="eyebrow">ANNOUNCEMENTS PAGE</p>
+                <h1>Admin Dashboard</h1>
+                <p class="header-copy">Create and manage announcements.</p>
+            </div>
+
+            <nav class="board-actions" aria-label="Dashboard actions">
+                <a class="admin-link" href="Userdashboard.html">Member view</a>
+                <a class="logout" href="LoginForm.html">Logout</a>
+            </nav>    
+        </header>
+
+        <div class="admin-layout">
+            <section class="post-form">
+                <h2>New announcement</h2>
+
+                <form action="Userdashboard.html">
+                    <label for="announcement-title">Title</label>
+                    <input id="announcement-title" name="title" maxlength="80" required>
+
+                    <label for="announcement-category">Category</label>
+                    <select id="announcement-category" name="category">
+                        <option>General</option>
+                        <option>Event</option>
+                        <option>Important</option>
+                    </select>
+
+                    <label for="announcement-message">Message</label>
+                    <textarea id="announcement-message" name="message" rows="6"
+                        maxlength="500" required></textarea>
+
+                    <button type="submit">Publish announcement</button>
+                </form>
+            </section>
+
+            <section class="admin-announcements">
+                <div class="section-heading">
+                    <h2>Published announcements</h2>
+                </div>
+
+                <section class="announcement-list">
+                    <article class="announcement-card">
+                        <div class="announcement-meta">
+                            <span class="badge">General</span>
+                            <time>August 19, 2026</time>
+                        </div>
+                        <h2>Welcome</h2>
+                        <p>Announcements and notices will be posted on this page.</p>
+                    </article>
+                </section>
+            </section>
+        </div>
+    </main>
+</body>
+</html>
