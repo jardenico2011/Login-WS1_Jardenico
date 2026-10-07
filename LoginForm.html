@@ -4,28 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Login</title>
+    <title>Login | ANNOUNCEMENT PAGE</title>
 </head>
 <body>
     <main class="login-card">
-        <img class="login-logo" src="assets/peace-freedom-logo-transparent.png" alt="Peace Freedom International Collective logo">
+        <p class="brand-name">ANNOUNCEMENT PAGE</p>
         <h1>Welcome back</h1>
         <p class="subtitle">Sign in to your account</p>
 
-        <form class="login-form">
-            <label for="username">Username</label>
-            <input id="username" name="username" type="text" placeholder="Enter your username" required>
+        <form class="login-form" action="login.php" method="POST" autocomplete="off">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" value=""
+                placeholder="Enter your email" autocomplete="email" required>
 
             <label for="password">Password</label>
-            <input id="password" name="password" type="password" placeholder="Enter your password" required>
+            <input id="password" name="password" type="password" value=""
+                placeholder="Enter your password" autocomplete="current-password" required>
 
             <div class="button-container">
-                <button type="button" onclick="window.location.href='User dashboard.html'">Login</button>
+                <button type="submit">Login</button>
             </div>
         </form>
 
-        <p class="register-link">Don't have an account? <a href="RIGISTERPAGE/index.html">Register</a></p>
+        <p class="register-link">
+            Don't have an account? <a href="register.php">Register</a>
+        </p>
     </main>
-    
 </body>
 </html>

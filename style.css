@@ -1,205 +1,179 @@
-/* Base */
-* { box-sizing: border-box; }
-
 body {
     margin: 0;
-    min-height: 100vh;
     padding: 20px;
     font-family: Arial, sans-serif;
-    color: #222;
-    background: #99e4dd;
-}
-
-h1, h2, h3 { margin-top: 0; }
-
-/* Login and register pages */
-body:not(.dashboard-page) {
-    display: grid;
-    place-items: center;
+    background-color: #dff3f1;
 }
 
 .login-card,
-.welcome-card {
-    width: 100%;
-    max-width: 400px;
-    padding: 30px;
-    background: #e9eeee;
-    border: 1px solid #ddd;
-    border-radius: 8px;
+.board-shell {
+    width: 80%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #cccccc;
 }
 
-.login-logo {
-    display: block;
-    width: 100%;
-    margin: -12px auto 4px;
+.login-card {
+    width: 350px;
+    padding: 25px;
+    border-radius: 5px;
+}
+
+h1 {
+    margin-bottom: 5px;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+.subtitle,
+.header-copy,
+.eyebrow {
+    color: #555555;
+}
+
+.error-message {
+    padding: 8px;
+    color: #9b2525;
+    background-color: #f8dddd;
 }
 
 .login-card h1,
-.welcome-card { text-align: center; }
+.login-card .subtitle {
+    text-align: center;
+}
 
-.subtitle,
-.register-link,
-.welcome-card p { color: #666; }
+.login-card .brand-name {
+    margin-top: 0;
+    color: #278796;
+    font-size: 14px;
+    text-align: center;
+}
 
-/* Forms and buttons */
 label {
     display: block;
-    margin: 15px 0 5px;
+    margin-top: 15px;
+    margin-bottom: 5px;
 }
 
 input,
 select,
-textarea,
+textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #999999;
+    border-radius: 3px;
+}
+
+input:focus {
+    outline: none;
+    border-color: #278796;
+}
+
+textarea {
+    height: 120px;
+}
+
 button {
     width: 100%;
-    padding: 10px;
-    font: inherit;
-    border-radius: 4px;
-}
-
-input,
-select,
-textarea { border: 1px solid #bbb; }
-
-button,
-.logout {
-    display: inline-block;
     margin-top: 20px;
-    border: 0;
-    color: #fff;
-    background: #247d8b;
-    cursor: pointer;
+    padding: 10px;
+    border: none;
+    color: white;
+    background-color: #278796;
+    border-radius: 3px;
+}
+
+button:hover {
+    background-color: #1f7180;
+}
+
+a {
+    color: #176b77;
+}
+
+.register-link {
+    margin-top: 20px;
     text-align: center;
-    text-decoration: none;
+    font-size: 14px;
 }
 
-button:hover,
-.logout:hover { background: #196270; }
-
-/* Announcement board */
-.dashboard-page {
+.secondary-button {
     display: block;
-    padding: 24px 16px;
-    background: #7ceaea;
-}
-
-.board-shell {
-    width: 100%;
-    max-width: 960px;
-    margin: auto;
+    margin-top: 12px;
+    text-align: center;
 }
 
 .board-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 18px;
-    padding: 18px 20px;
-    color: #fff;
-    background: #247d8b;
-    border: 1px solid #1e6874;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #cccccc;
 }
 
-.board-header h1 { margin-bottom: 5px; }
-.eyebrow,
-.header-copy { margin: 4px 0; font-size: .9rem; }
-
-.board-actions,
-.announcement-toolbar,
-.section-heading,
-.announcement-meta {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    flex-wrap: wrap;
+.board-actions {
+    margin-top: 15px;
 }
 
-.board-actions { justify-content: flex-end; }
-.board-actions .logout,
+.logout,
 .admin-link {
-    margin: 0;
+    display: inline-block;
+    margin-right: 10px;
     padding: 8px 12px;
-    color: #184e57;
-    background: #fff;
-    border-radius: 3px;
+    color: white;
+    background-color: #278796;
     text-decoration: none;
 }
-.board-actions .logout { color: #fff; background: #42656b; }
 
-.announcement-toolbar,
-.section-heading {
-    justify-content: space-between;
-    margin: 18px 0 10px;
+.announcement-list {
+    margin-top: 20px;
 }
-
-.announcement-count,
-.filter-label { margin: 0; color: #555; }
-.filter-label select { width: auto; margin-left: 6px; }
-
-.announcement-list { display: grid; gap: 10px; }
 
 .announcement-card {
-    padding: 16px 18px;
-    background: #fff;
-    border: 1px solid #d5d5d5;
-    border-left: 4px solid #318b99;
+    margin-bottom: 12px;
+    padding: 15px;
+    border: 1px solid #cccccc;
 }
 
-.announcement-card h2,
-.announcement-card h3 { margin: 10px 0 8px; font-size: 1.1rem; }
-.announcement-card p { margin: 0; color: #444; line-height: 1.45; }
-.announcement-meta { font-size: .85rem; color: #666; }
+.announcement-card h2 {
+    margin: 10px 0;
+}
+
+.announcement-meta {
+    color: #666666;
+    font-size: 14px;
+}
 
 .badge {
-    padding: 3px 7px;
-    color: #075e72;
-    background: #dbeef0;
-    border-radius: 3px;
-    font-size: .75rem;
-    font-weight: bold;
+    margin-right: 10px;
+    padding: 3px 6px;
+    color: #176b77;
+    background-color: #dff3f1;
 }
 
-.badge.event { color: #725a00; background: #fff0ba; }
-.badge.important { color: #8c2528; background: #f9dddd; }
-.empty-state { padding: 25px; margin: 0; text-align: center; background: #fff; border: 1px solid #ddd; }
+.badge.event {
+    background-color: #fff3c4;
+}
 
-/* Admin page */
+.badge.important {
+    background-color: #f8dddd;
+}
+
 .admin-layout {
-    display: grid;
-    grid-template-columns: minmax(270px, .8fr) minmax(0, 1.5fr);
-    gap: 18px;
-    margin-top: 18px;
+    margin-top: 20px;
 }
 
 .post-form,
 .admin-announcements {
-    padding: 18px;
-    background: #fff;
-    border: 1px solid #d5d5d5;
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #cccccc;
 }
 
-.post-form button { margin-top: 20px; }
-.form-status { min-height: 1.3em; margin: 10px 0 0; color: #187043; font-size: .9rem; }
-.admin-announcements .announcement-list { margin-top: 10px; }
-
-.text-button,
-.delete-button {
-    width: auto;
-    margin: 0;
-    padding: 5px 8px;
-    color: #872c2c;
-    background: #f7f7f7;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    font-size: .8rem;
-}
-
-.text-button { color: #155b67; }
-.delete-button { margin-left: auto; }
-
-@media (max-width: 700px) {
-    .dashboard-page { padding: 16px; }
-    .board-header,
-    .admin-layout { display: grid; grid-template-columns: 1fr; }
-    .announcement-toolbar { align-items: flex-start; flex-direction: column; }
+@media (max-width: 600px) {
+    .login-card,
+    .board-shell {
+        width: 100%;
+    }
 }

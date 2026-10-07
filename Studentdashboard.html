@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Student Dashboard | ANNOUNCEMENT PAGE</title>
+</head>
+<body class="dashboard-page">
+    <main class="board-shell">
+        <header class="board-header">
+            <div>
+                <p class="eyebrow">ANNOUNCEMENT PAGE</p>
+                <h1>Student Dashboard</h1>
+                <p class="header-copy" id="welcome-message">Stay updated with the latest notices.</p>
+            </div>
+            <nav class="board-actions" aria-label="Student dashboard actions">
+                <a class="logout" href="logout.php">Logout</a>
+            </nav>
+        </header>
+
+        <section class="announcement-list" id="announcement-list">
+            <p class="header-copy">Loading announcements...</p>
+        </section>
+    </main>
+
+    <script>
+        const announcementList = document.getElementById('announcement-list');
+        const welcomeMessage = document.getElementById('welcome-message');
+
+        fetch('StudentDashboard.php?data=1')
+            .then(response => response.json())
+            .then(data => {
+                welcomeMessage.textContent = `Welcome, ${data.name}. Stay updated with the latest notices.`;
+                announcementList.innerHTML = '';
+
+                data.announcements.forEach(announcement => {
+                    const card = document.createElement('article');
+                    const meta = document.createElement('div');
+                    const badge = document.createElement('span');
+                    const date = document.createElement('time');
+                    const title = document.createElement('h2');
+                    const message = document.createElement('p');
+
+                    card.className = 'announcement-card';
+                    meta.className = 'announcement-meta';
+                    badge.className = `badge ${announcement.category.toLowerCase()}`;
+                    badge.textContent = announcement.category;
+                    date.textContent = new Date(announcement.created_at).toLocaleDateString('en-US', {
+                        year: 'numeric', month: 'long', day: 'numeric'
+                    });
+                    title.textContent = announcement.title;
+                    message.textContent = announcement.message;
+
+                    meta.append(badge, date);
+                    card.append(meta, title, message);
+                    announcementList.append(card);
+                });
+
+                if (!data.announcements.length) {
+                    announcementList.textContent = 'No announcements available.';
+                }
+            })
+            .catch(() => {
+                announcementList.textContent = 'Unable to load announcements.';
+            });
+    </script>
+</body>
+</html>
